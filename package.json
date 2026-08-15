@@ -1,0 +1,50 @@
+{
+  "name": "dsh-deepseek-quota-bar",
+  "version": "0.5.0",
+  "description": "DeepSeek API quota widget for the dsh web GUI: floating bottom-right card with a blood-bar of remaining balance vs month-opening balance, plus today/month spend and current conversation cost (fork of dsh-deepseek-quota).",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "docs"
+  ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "slots"
+      ]
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek",
+    "deepseek-harness",
+    "plugin",
+    "quota",
+    "balance",
+    "usage",
+    "cost",
+    "web"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiangli07/dsh-deepseek-quota-bar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jiangli07/dsh-deepseek-quota-bar/issues"
+  },
+  "homepage": "https://github.com/jiangli07/dsh-deepseek-quota-bar#readme"
+}

@@ -1,0 +1,10 @@
+# Your patch layer for this dsh profile, applied after every bundle layer:
+# a top-level YAML array of loader patch entries (id-targeted config
+# overrides, disables, and insert lists; `!!js` expressions allowed).
+
+# dsh-deepseek-quota-bar — DeepSeek API 额度（余额/月初血条 + 今日/本月用量）右下角展示插件。
+# Host half registers GET /api/deepseek-balance; the package also declares a
+# dsh.client web bundle that paints the bottom-right overlay widget.
+- insert:
+    - id: deepseek-quota-bar
+      name: dsh-deepseek-quota-bar
