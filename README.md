@@ -21,8 +21,6 @@ spend (official platform data when configured).
 ## 安装 Install
 
 ```sh
-dsh plugin --profile web add dsh-deepseek-quota-bar
-# 或从 GitHub 安装：
 dsh plugin --profile web add github:jiangli07/dsh-deepseek-quota-bar
 ```
 
