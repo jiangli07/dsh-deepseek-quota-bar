@@ -32,6 +32,15 @@ dsh plugin --profile web add github:jiangli07/dsh-deepseek-quota-bar
 
 安装后重启 `dsh web`，打开页面强刷（Ctrl+Shift+R），右下角出现卡片。
 
+## 兼容性 Compatibility
+
+| dsh | 会话日志回放接口 | 当前会话判定 |
+|---|---|---|
+| 0.1.0-rc.6 ~ 0.1.x | `readStoredRevision` + `readRaw` | `SessionListState.current` |
+| 0.2.x | `stat` + `open(id, "read")` | `retainedBy.mainView > 0` |
+
+两代接口均在运行时特性探测，同一份 `lib/` 同时运行在 0.1.x 与 0.2.x 上，无需按版本分叉。
+
 ## 配置 Configuration
 
 | 凭证 | 必需 | 说明 |
@@ -47,7 +56,7 @@ dsh plugin --profile web add github:jiangli07/dsh-deepseek-quota-bar
 - **今日/本月（官方）**：`GET https://platform.deepseek.com/api/v0/usage/cost?month=&year=`（与平台控制台同源）
 - **今日/本月（估算兜底）**：月初/当日期初余额快照差值，状态持久化于 `~/.dsh/storages/deepseek-quota-bar.json`
 - **血条分母**：本月 1 号首次观测到的余额快照；月中新装时用「当前余额 + 本月官方消耗」反推
-- **对话费用**：订阅 `session/event` 实时计价 + 持久化日志全量回放（含重启前历史）
+- **对话费用**：订阅 `session/event` 实时计价 + 持久化日志全量回放（含重启前历史；回放接口按 dsh 版本特性探测）
 
 ## 开发 Development
 

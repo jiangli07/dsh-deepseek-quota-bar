@@ -1,6 +1,6 @@
 {
   "name": "dsh-deepseek-quota-bar",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "DeepSeek API quota widget for the dsh web GUI: floating bottom-right card with a blood-bar of remaining balance vs month-opening balance, plus today/month spend, peak/off-peak reminder and current conversation cost (fork of dsh-deepseek-quota).",
   "type": "module",
   "main": "lib/index.js",
@@ -26,13 +26,14 @@
       ]
     },
     "compatibility": {
-      "dsh": ">=0.1.0-rc.6 <0.2.0",
+      "dsh": ">=0.1.0-rc.6 <0.3.0",
       "dshReleases": {
         "0.1.0-rc.6": "compatible",
         "0.1.5-alpha.1": "unknown",
         "0.1.5-alpha.2": "unknown",
         "0.1.5-rc.1": "compatible",
-        "0.1.5-rc.2": "compatible"
+        "0.1.5-rc.2": "compatible",
+        "0.2.0-rc.2": "compatible"
       },
       "node": "^22.19.0 || >=24.0.0",
       "systems": [],
